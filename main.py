@@ -1,5 +1,6 @@
 from turtle import Turtle, Screen
-import random
+from snake import Snake
+import time
 
 
 # Build the screen
@@ -7,15 +8,21 @@ screen = Screen()
 screen.bgcolor("black")
 screen.setup(width=600, height=600)
 screen.title("Classic Snake Game")
+screen.tracer(0)
 
-# Build the original body of the snake
-dis = 20
-pos = 0
-whole_snake = []
-for _ in range(0,3):
-    snake_segment = Turtle(shape="square")
-    snake_segment.color("white")
-    snake_segment.goto(x=pos, y=0)
-    pos = pos - dis
+snake = Snake()
+screen.listen()
+screen.onkey(snake.up, "Up")
+screen.onkey(snake.down, "Down")
+screen.onkey(snake.left, "Left")
+screen.onkey(snake.right, "Right")
+
+game_is_on = True
+while game_is_on:
+    screen.update()
+    time.sleep(0.1)
+    snake.move()
+
+screen.update()
 
 screen.exitonclick()
