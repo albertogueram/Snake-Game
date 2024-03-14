@@ -28,7 +28,7 @@ class Snake:
             new_x = self.whole_snake[snake_segment - 1].xcor()
             new_y = self.whole_snake[snake_segment - 1].ycor()
             self.whole_snake[snake_segment].goto(x=new_x, y=new_y)
-        self.whole_snake[0].forward(MOVE_DISTANCE)
+        self.head.forward(MOVE_DISTANCE)
 
     def up(self):
         if self.head.heading() != DOWN:
