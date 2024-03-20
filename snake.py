@@ -54,3 +54,11 @@ class Snake:
         new_y = self.whole_snake[-1].ycor()
         snake_segment.goto(x=new_x, y=new_y)
         self.whole_snake.append(snake_segment)
+
+    def reset(self):
+        # Send the current snake out of the screen
+        for seg in self.whole_snake:
+            seg.goto(1000,1000)
+        self.whole_snake.clear()
+        self.create_snake()
+        self.head = self.whole_snake[0]
