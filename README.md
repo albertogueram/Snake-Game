@@ -23,10 +23,14 @@ food.
 ## ScoreBoard Class 
 Inheritance of Turtle class from turtle package
 #### Refresh:
-Update the score whenever the head of the snake collission
+Update the score and call update_scoreboard method
+whenever the head of the snake collission
 with food.
-#### Game over:
-Indicate the game over to the user
+#### Update Scoreboard:
+Delete the previous score and update it
+### Reset:
+When the snake collission with itself of the edges
+it´s update the highest score and create a new snake.
 
 # Main Function
 While variable game_is_on is True it will continue running the program till:
